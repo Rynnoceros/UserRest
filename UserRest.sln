@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserRest", "UserRest.csproj", "{2A11E1FB-D961-46CD-A567-FBA1365D27AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A11E1FB-D961-46CD-A567-FBA1365D27AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A11E1FB-D961-46CD-A567-FBA1365D27AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A11E1FB-D961-46CD-A567-FBA1365D27AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A11E1FB-D961-46CD-A567-FBA1365D27AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
