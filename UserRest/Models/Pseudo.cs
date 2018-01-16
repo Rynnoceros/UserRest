@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace UserRest.Models
 {
-    public partial class Pseudos
+    public partial class Pseudo
     {
         public int Id { get; set; }
         public string Name { get; set; }
