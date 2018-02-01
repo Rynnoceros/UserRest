@@ -27,6 +27,13 @@ namespace UserRest
         {
             var connectionString = Configuration.GetConnectionString("UserContext");
             services.AddMvc();
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy",
+                                  builder => builder.AllowAnyOrigin()
+                                  .AllowAnyMethod()
+                                  .AllowAnyHeader()
+                                  .AllowCredentials());   
+            });
             services.AddEntityFrameworkNpgsql().AddDbContext<UserContext>(options => options.UseNpgsql(connectionString));
         }
 
@@ -38,6 +45,7 @@ namespace UserRest
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("CorsPolicy");
             app.UseMvc();
         }
     }
