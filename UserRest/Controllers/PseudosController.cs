@@ -131,10 +131,12 @@ namespace UserRest.Controllers
                 Pseudo usr = _context.Pseudos.Where(pseudo => pseudo.Id == id).FirstOrDefault();
                 if (usr != null)
                 {
-                    if (!_context.Pseudos.Where(pseudo => pseudo.Name == value.Name).Any())
+                    if (!_context.Pseudos.Where(pseudo => pseudo.Name == value.Name && pseudo.Id != value.Id).Any())
                     {
                         usr.Name = value.Name;
                         usr.Avatar = value.Avatar;
+                        usr.NombrePartie = value.NombrePartie;
+                        usr.Victoires = value.Victoires;
                         _context.Update(usr);
                         _context.SaveChanges();
                         return Accepted(usr);

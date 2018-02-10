@@ -20,6 +20,11 @@ namespace UserRest.Contexts
                 entity.Property(e => e.Avatar).HasColumnName("avatar");
 
                 entity.Property(e => e.Name).HasColumnName("name");
+
+                entity.Property(e => e.NombrePartie).HasColumnName("nombre_partie");
+
+                entity.Property(e => e.Victoires).HasColumnName("nombre_victoire");
+
             });
         }
 

@@ -15,42 +15,42 @@ namespace UserRest.Controllers
     {
         // GET: api/values
         [HttpPost]
-        public Joueur CheckVictory([FromBody] List<Square> grid)
+        public Pseudo CheckVictory([FromBody] List<Square> grid)
         {
-            Joueur winner = null;
+            Pseudo winner = null;
 
-            winner = CheckLine(new List<Joueur>() { grid[0].Owner, grid[1].Owner, grid[2].Owner });
-
-            if (winner == null)
-                winner = CheckLine(new List<Joueur>() { grid[3].Owner, grid[4].Owner, grid[5].Owner });
+            winner = CheckLine(new List<Pseudo>() { grid[0].Owner, grid[1].Owner, grid[2].Owner });
 
             if (winner == null)
-                winner = CheckLine(new List<Joueur>() { grid[6].Owner, grid[7].Owner, grid[8].Owner });
+                winner = CheckLine(new List<Pseudo>() { grid[3].Owner, grid[4].Owner, grid[5].Owner });
 
             if (winner == null)
-                winner = CheckLine(new List<Joueur>() { grid[0].Owner, grid[3].Owner, grid[6].Owner });
+                winner = CheckLine(new List<Pseudo>() { grid[6].Owner, grid[7].Owner, grid[8].Owner });
 
             if (winner == null)
-                winner = CheckLine(new List<Joueur>() { grid[1].Owner, grid[4].Owner, grid[7].Owner});
+                winner = CheckLine(new List<Pseudo>() { grid[0].Owner, grid[3].Owner, grid[6].Owner });
 
             if (winner == null)
-                winner = CheckLine(new List<Joueur>() { grid[2].Owner, grid[5].Owner, grid[8].Owner });
+                winner = CheckLine(new List<Pseudo>() { grid[1].Owner, grid[4].Owner, grid[7].Owner});
 
             if (winner == null)
-                winner = CheckLine(new List<Joueur>() { grid[0].Owner, grid[4].Owner, grid[8].Owner });
+                winner = CheckLine(new List<Pseudo>() { grid[2].Owner, grid[5].Owner, grid[8].Owner });
 
             if (winner == null)
-                winner = CheckLine(new List<Joueur>() { grid[2].Owner, grid[4].Owner, grid[6].Owner });
+                winner = CheckLine(new List<Pseudo>() { grid[0].Owner, grid[4].Owner, grid[8].Owner });
+
+            if (winner == null)
+                winner = CheckLine(new List<Pseudo>() { grid[2].Owner, grid[4].Owner, grid[6].Owner });
 
             return winner;
         }
 
-        private Joueur CheckLine(List<Joueur> players)
+        private Pseudo CheckLine(List<Pseudo> players)
         {
-            Joueur retour = null;
+            Pseudo retour = null;
             bool isLineComplete = true;
             bool isSamePlayer = true;
-            Joueur currentPlayer = null;
+            Pseudo currentPlayer = null;
 
             if (players != null && players.Count() > 0)
             {
@@ -58,7 +58,7 @@ namespace UserRest.Controllers
 
                 if (currentPlayer != null)
                 {
-                    foreach (Joueur joueur in players)
+                    foreach (Pseudo joueur in players)
                     {
                         isLineComplete &= (joueur != null);
                         isSamePlayer &= (currentPlayer.Equals(joueur));

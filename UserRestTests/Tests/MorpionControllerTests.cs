@@ -32,8 +32,8 @@ namespace UserRestTests.Tests
         [Fact]
         public void NoWinner()
         {
-            Joueur j1 = new Joueur() { Nom = "Jordan", NombrePartie = 1, NombreVictoire = 0, Image = "Jojo" };
-            Joueur j2 = new Joueur() { Nom = "Damien", NombrePartie = 10, NombreVictoire = 0, Image = "Joker" };
+            Pseudo j1 = new Pseudo() { Name = "Jordan", NombrePartie = 1, Victoires = 0, Avatar = "Jojo" };
+            Pseudo j2 = new Pseudo() { Name = "Damien", NombrePartie = 10, Victoires = 0, Avatar = "Joker" };
 
             List<Square> grid = new List<Square>() {
                 new Square() { Id = 1, Owner = j1}, new Square() { Id = 2, Owner = j2}, new Square() { Id = 3, Owner = j1},
@@ -47,8 +47,8 @@ namespace UserRestTests.Tests
         [Fact]
         public void Winner()
         {
-            Joueur j1 = new Joueur() { Nom = "Jordan", NombrePartie = 1, NombreVictoire = 0, Image = "Jojo" };
-            Joueur j2 = new Joueur() { Nom = "Damien", NombrePartie = 10, NombreVictoire = 0, Image = "Joker" };
+            Pseudo j1 = new Pseudo() { Name = "Jordan", NombrePartie = 1, Victoires = 0, Avatar = "Jojo" };
+            Pseudo j2 = new Pseudo() { Name = "Damien", NombrePartie = 10, Victoires = 0, Avatar = "Joker" };
 
             List<Square> grid = new List<Square>() {
                 new Square() { Id = 1, Owner = j1}, new Square() { Id = 2, Owner = j2}, new Square() { Id = 3, Owner = j1},

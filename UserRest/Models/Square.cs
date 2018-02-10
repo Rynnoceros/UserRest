@@ -9,7 +9,7 @@ namespace UserRest.Models
             set;
         }
 
-        public Joueur Owner
+        public Pseudo Owner
         {
             get;
             set;
@@ -20,7 +20,7 @@ namespace UserRest.Models
             
         }
 
-        public Square(int id, Joueur j)
+        public Square(int id, Pseudo j)
         {
             Id = id;
             Owner = j;
